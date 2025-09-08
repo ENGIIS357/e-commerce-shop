@@ -1,12 +1,28 @@
 <?php
 
 // use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ShopController;
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+// routes/web.php
+use App\Http\Controllers\ShopController;
 
-Route::get('/', [ShopController::class, 'index']);
+Route::get('/', [ShopController::class, 'index'])->name('home');
+Route::get('/about', [ShopController::class, 'about'])->name('about');
+Route::get('/category', [ShopController::class, 'services'])->name('category');
+Route::get('/product/{id}', [ShopController::class, 'product'])->name('product.show');
+Route::get('/cart', [ShopController::class, 'cart'])->name('cart');
+Route::get('/checkout', [ShopController::class, 'checkout'])->name('checkout');
+Route::get('/contact', [ShopController::class, 'contact'])->name('contact');
+//Route::post('/contact', [ShopController::class, 'submit'])->name('contact.submit');
+// Route::get('/search', [ShopController::class, 'index'])->name('search');
 
-//Route::get('/shop', [ShopController::class, 'index']);
+// Account routes
+// Route::get('/account/profile', [AccountController::class, 'profile'])->name('account.profile');
+// Route::get('/account/orders', [AccountController::class, 'orders'])->name('account.orders');
+// Route::get('/account/wishlist', [AccountController::class, 'wishlist'])->name('account.wishlist');
+// Route::get('/account/settings', [AccountController::class, 'settings'])->name('account.settings');
+
+// // Auth routes
+// Auth::routes();
