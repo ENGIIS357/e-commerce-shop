@@ -12,6 +12,7 @@ Route::get('/', [ShopController::class, 'index'])->name('home');
 Route::get('/about', [ShopController::class, 'about'])->name('about');
 Route::get('/category', [ShopController::class, 'services'])->name('category');
 Route::get('/product/{id}', [ShopController::class, 'product'])->name('product.show');
+Route::get('/products', [ShopController::class, 'products'])->name('products');
 Route::get('/cart', [ShopController::class, 'cart'])->name('cart');
 Route::get('/checkout', [ShopController::class, 'checkout'])->name('checkout');
 Route::get('/contact', [ShopController::class, 'contact'])->name('contact');
