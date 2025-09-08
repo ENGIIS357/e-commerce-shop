@@ -7,6 +7,9 @@
 // });
 // routes/web.php
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ProductController;
+
+Route::get('/products', [ProductController::class, 'index']);
 
 Route::get('/', [ShopController::class, 'index'])->name('home');
 Route::get('/about', [ShopController::class, 'about'])->name('about');
