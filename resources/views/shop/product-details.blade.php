@@ -6,8 +6,13 @@
  @section('content')
 
 
-<main class="main">
 
+<main class="main">
+<h1>{{ $product->name }}</h1>
+<p>{{ $product->description }}</p>
+<p>السعر: ${{ $product->price }}</p>
+<p>متاح للخصم: {{ $product->on_sale ? 'نعم' : 'لا' }}</p>
+<a href="{{ url('/products') }}">عودة لجميع المنتجات</a>
     <!-- Page Title -->
     <div class="page-title light-background">
       <div class="container d-lg-flex justify-content-between align-items-center">

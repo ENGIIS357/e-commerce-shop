@@ -7,6 +7,14 @@
 // });
 // routes/web.php
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ProductController;
+
+Route::get('/products', [ProductController::class, 'index'])->name();
+Route::get('/products/create', [ProductController::class, 'create']);
+Route::post('/products', [ProductController::class, 'store']);
+Route::get('/products/{id}/edit', [ProductController::class, 'edit']);
+Route::put('/products/{id}', [ProductController::class, 'update']);
+Route::delete('/products/{id}', [ProductController::class, 'destroy']);
 
 Route::get('/', [ShopController::class, 'index'])->name('home');
 Route::get('/about', [ShopController::class, 'about'])->name('about');
