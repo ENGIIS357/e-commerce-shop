@@ -19,5 +19,16 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'can:access-admin-panel'])->prefix('admin')->group(function () {
     // ... existing routes ...
 });
+Route::get('/wiam-email', function () {
+    $email = new \App\Mail\WelcomeEmail();
+    Mail::to('wiam@gmail.com')->send($email);
+    return 'تم إرسال البريد بنجاح!';
+});
+
+Route::get('/wiam-notification', function () {
+    $user = \App\Models\User::first();
+    $user->notify(new \App\Notifications\NewOrderNotification());
+    return 'تم إرسال الإشعار بنجاح!';
+});
 
 require __DIR__.'/auth.php';
