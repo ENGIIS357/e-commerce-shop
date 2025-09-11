@@ -11,6 +11,7 @@
                 <th>Name</th>
                 <th>Price</th>
                 <th>Category</th>
+                <th>Actions</th> <!-- Added column for actions -->
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,11 @@
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->price }}</td>
                 <td>{{ $product->category->name }}</td>
+                <td>
+                    @can('update', $product)
+                    <button>Edit</button>
+                    @endcan
+                </td>
             </tr>
             @endforeach
         </tbody>
